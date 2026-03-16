@@ -1093,6 +1093,210 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+
+        /* ===== HERO BADGE ===== */
+        .hero-badge {
+            margin-bottom: 20px;
+        }
+
+        .badge-followers {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        /* ===== BUILDINGS SECTION ===== */
+        .buildings {
+            padding: 100px 0;
+            background: var(--color-white);
+        }
+
+        .buildings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .building-card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .building-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .building-image {
+            height: 100%;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+        }
+
+        .building-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+        }
+
+        .building-image.hyde { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .building-image.tempo { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .building-image.pavilion { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .building-image.collins { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+        .building-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .building-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--color-primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .building-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--color-text);
+        }
+
+        .building-location {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+        }
+
+        .building-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .building-feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--color-text-light);
+            background: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .building-feature svg {
+            width: 14px;
+            height: 14px;
+            color: var(--color-primary);
+        }
+
+        .building-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .building-price span {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--color-text-light);
+        }
+
+        .building-cta {
+            margin-top: 16px;
+        }
+
+        /* ===== IMPROVED TESTIMONIALS ===== */
+        .rating-banner {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .rating-banner h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .rating-banner p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+        }
+
+        .rating-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 16px;
+        }
+
+        .rating-stat {
+            text-align: center;
+        }
+
+        .rating-stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .rating-stat-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        @media (max-width: 768px) {
+            .buildings-grid {
+                grid-template-columns: 1fr;
+            }
+            .building-card {
+                grid-template-columns: 1fr;
+            }
+            .building-image {
+                min-height: 180px;
+            }
+            .rating-stats {
+                gap: 20px;
+            }
+            .rating-stat-number {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1106,6 +1310,7 @@
                 </a>
                 <nav class="nav">
                     <a href="#como-funciona">Cómo funciona</a>
+                    <a href="#edificios">Edificios</a>
                     <a href="#propiedades">Alojamientos</a>
                     <a href="#testimonios">Testimonios</a>
                     <a href="#faq">FAQ</a>
@@ -1145,8 +1350,11 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Tu semana en Miami, sin complicaciones.</h1>
-                <p class="hero-sub">Alojamientos seleccionados en las mejores zonas. Reserva con 20% y el resto al llegar. Te enviamos 3 opciones en minutos por WhatsApp.</p>
+                <div class="hero-badge">
+                    <span class="badge-followers">⭐ 16K seguidores en Instagram</span>
+                </div>
+                <h1>Tu departamento frente al mar en Miami</h1>
+                <p class="hero-sub">Para tus vacaciones en familia o viajes de negocios. Alojamientos verificados en los mejores edificios de Miami Beach. Reserva fácil, sin complicaciones.</p>
                 <div class="hero-ctas">
                     <a href="https://wa.me/1234567890?text=Hola%2C+me+interesa+alquilar+en+Miami+-+Familias+y+Compras" class="btn btn-whatsapp" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a5.593 5.593 0 01-5.492-5.392A5.593 5.593 0 0112 5.403c1.619 0 3.127.776 4.246 2.074.339.393.532.89.532 1.425v.065c0 1.062-.382 2.063-1.08 2.81l-.457.457c-.378.378-.869.589-1.393.589H7.082c-.535 0-1.037-.223-1.411-.606l-.457-.457c-.634-.628-.986-1.45-.986-2.331 0-1.38 1.12-2.5 2.5-2.5h.002l.06.002c.69.006 1.336.22 1.872.631.536.412.872.988 1.008 1.743l.013.107c.007.063.011.127.011.192 0 .065-.005.13-.014.194l-.022.15c-.068.447-.219.868-.45 1.248-.231.38-.541.709-.923.977l-.083.059c-.378.252-.815.39-1.261.39H9.5c-.524 0-1.03-.167-1.461-.504l-.083-.078c-.431-.404-.66-.965-.66-1.544V16.5c0-.579.23-1.128.63-1.514l.064-.063c.4-.385.949-.594 1.492-.594h1.164c.524 0 1.023.186 1.403.522l.065.063c.399.385.615.9.615 1.444v.062z"/></svg>
@@ -1429,11 +1637,165 @@
         </div>
     </div>
 
+    <!-- Buildings Section -->
+    <section class="buildings" id="edificios">
+        <div class="container">
+            <h2 class="section-title text-center">Edificios exclusivos</h2>
+            <p class="section-subtitle text-center">Propiedades seleccionadas en los condominios más cotizados de Miami Beach</p>
+            
+            <div class="buildings-grid">
+                <div class="building-card">
+                    <div class="building-image hyde">🏢</div>
+                    <div class="building-content">
+                        <span class="building-badge">Hyde House</span>
+                        <h3>Hyde House</h3>
+                        <div class="building-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Miami Beach
+                        </div>
+                        <div class="building-features">
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                                1 dormitorio
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                                Vista increíble
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3z"/></svg>
+                                Hasta 4 personas
+                            </span>
+                        </div>
+                        <p class="building-price">Desde <strong>$140/noche</strong> <span>(según temporada)</span></p>
+                        <div class="building-cta">
+                            <a href="https://wa.me/1234567890?text=Hola%2C+me+interesa+Hyde+House.+%C2%BFPueden+darme+mas+detalles%3F" class="btn btn-primary" target="_blank" style="padding: 10px 20px; font-size: 13px;">Ver disponibilidad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image tempo">🌴</div>
+                    <div class="building-content">
+                        <span class="building-badge">Tempo Aparts</span>
+                        <h3>Tempo Aparts</h3>
+                        <div class="building-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Miami Beach
+                        </div>
+                        <div class="building-features">
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                                1 dormitorio
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                                Ubicación privilegiada
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                                Vista spectacular
+                            </span>
+                        </div>
+                        <p class="building-price">Desde <strong>$130/noche</strong> <span>(según temporada)</span></p>
+                        <div class="building-cta">
+                            <a href="https://wa.me/1234567890?text=Hola%2C+me+interesa+Tempo+Aparts.+%C2%BFPueden+darme+mas+detalles%3F" class="btn btn-primary" target="_blank" style="padding: 10px 20px; font-size: 13px;">Ver disponibilidad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image pavilion">🏖️</div>
+                    <div class="building-content">
+                        <span class="building-badge">Pavilion</span>
+                        <h3>Pavilion</h3>
+                        <div class="building-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Frente al mar
+                        </div>
+                        <div class="building-features">
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                                Estudios y 1DR
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                                Acceso playa
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 21c-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-1 .18-1.45.55-.38.32-.75.77-1.15 1.25-.52.63-1.05 1.27-1.89 1.27s-1.38-.64-1.89-1.27c-.4-.48-.77-.93-1.15-1.25-.45-.37-.9-.55-1.45-.55v-2c.74 0 1.37.64 1.89 1.27.4.48.77.93 1.15 1.25.45.37.9.55 1.45.55.55 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s1-.18 1.45-.55c.38-.32.75-.77 1.15-1.25.52-.63 1.05-1.27 1.89-1.27s1.38.64 1.89 1.27c.4.48.77.93 1.15 1.25.45.37 1.24.55 1.45.55.55 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64v2z"/></svg>
+                                Piscina
+                            </span>
+                        </div>
+                        <p class="building-price">Desde <strong>$125/noche</strong> <span>(según temporada)</span></p>
+                        <div class="building-cta">
+                            <a href="https://wa.me/1234567890?text=Hola%2C+me+interesa+Pavilion.+%C2%BFPueden+darme+mas+detalles%3F" class="btn btn-primary" target="_blank" style="padding: 10px 20px; font-size: 13px;">Ver disponibilidad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image collins">🌆</div>
+                    <div class="building-content">
+                        <span class="building-badge">Collins 5445</span>
+                        <h3>Collins 5445</h3>
+                        <div class="building-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            Sobre línea de playa
+                        </div>
+                        <div class="building-features">
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                                Hasta 4 personas
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/></svg>
+                                Parking incluido
+                            </span>
+                            <span class="building-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 21c-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-1 .18-1.45.55-.38.32-.75.77-1.15 1.25-.52.63-1.05 1.27-1.89 1.27s-1.38-.64-1.89-1.27c-.4-.48-.77-.93-1.15-1.25-.45-.37-.9-.55-1.45-.55v-2c.74 0 1.37.64 1.89 1.27.4.48.77.93 1.15 1.25.45.37.9.55 1.45.55.55 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s1-.18 1.45-.55c.38-.32.75-.77 1.15-1.25.52-.63 1.05-1.27 1.89-1.27s1.38.64 1.89 1.27c.4.48.77.93 1.15 1.25.45.37 1.24.55 1.45.55.55 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64v2z"/></svg>
+                                Amenities premium
+                            </span>
+                        </div>
+                        <p class="building-price">Desde <strong>$145/noche</strong> <span>(según temporada)</span></p>
+                        <div class="building-cta">
+                            <a href="https://wa.me/1234567890?text=Hola%2C+me+interesa+Collins+5445.+%C2%BFPueden+darme+mas+detalles%3F" class="btn btn-primary" target="_blank" style="padding: 10px 20px; font-size: 13px;">Ver disponibilidad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center" style="margin-top: 40px; color: var(--color-text-light);">
+                <em>🏷️ Todos nuestros alojamientos son operados por <strong>Ammos Vacation Rentals</strong></em>
+            </p>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="testimonials" id="testimonios">
         <div class="container">
             <h2 class="section-title text-center">Lo que cuentan quienes ya se alojaron</h2>
             <p class="section-subtitle text-center">Reseñas verificadas de huéspedes reales</p>
+            
+            <div class="rating-banner">
+                <h3>⭐ 4.9/5 · +200 reseñas verificadas</h3>
+                <p>Basado en opiniones de huéspedes en Google, Airbnb y Booking</p>
+                <div class="rating-stats">
+                    <div class="rating-stat">
+                        <div class="rating-stat-number">200+</div>
+                        <div class="rating-stat-label">Estancias</div>
+                    </div>
+                    <div class="rating-stat">
+                        <div class="rating-stat-number">16K</div>
+                        <div class="rating-stat-label">Seguidores</div>
+                    </div>
+                    <div class="rating-stat">
+                        <div class="rating-stat-number">98%</div>
+                        <div class="rating-stat-label">Volverían</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
@@ -1467,6 +1829,28 @@
                     </div>
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Nos encanto la experiencia. Atención super rápida por WhatsApp y nos gavearon con un descuento por estadía larga. Volveremos."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AR</div>
+                        <div class="testimonial-info">
+                            <h4>Andrés Ruiz</h4>
+                            <span>Argentina</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El apartamento en Collins 5445 fue perfecto. Parking incluido y vista al mar increíble. Ya estamos planeando nuestra próxima visita."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">CM</div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Mendoza</h4>
+                            <span>Perú</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Viaje de negocios a Miami y el apartamento de Hyde House fue ideal. Wifi rápido, workspace perfecto y ubicación inmejorable."</p>
                 </div>
             </div>
             <div class="testimonials-cta">
@@ -1503,17 +1887,17 @@
     <!-- Social Media -->
     <section class="social">
         <div class="container">
-            <h2 class="section-title text-center">Síguenos en redes</h2>
-            <p class="section-subtitle text-center">Mira más tours, reseñas y contenido exclusivo</p>
+            <h2 class="section-title text-center">Síguenos en Instagram</h2>
+            <p class="section-subtitle text-center">⭐ 16K seguidores · Mira tours, reseñas y contenido exclusivo de nuestros alojamientos</p>
             <div class="social-links">
-                <a href="#" class="social-link" title="Instagram">
+                <a href="https://instagram.com/tealquiloenmiami" class="social-link" title="Instagram" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="#" class="social-link" title="Facebook">
+                <a href="https://facebook.com/tealquiloenmiami" class="social-link" title="Facebook" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="#" class="social-link" title="YouTube">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <a href="https://wa.me/1234567890" class="social-link" title="WhatsApp" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a5.593 5.593 0 01-5.492-5.392A5.593 5.593 0 0112 5.403c1.619 0 3.127.776 4.246 2.074.339.393.532.89.532 1.425v.065c0 1.062-.382 2.063-1.08 2.81l-.457.457c-.378.378-.869.589-1.393.589H7.082c-.535 0-1.037-.223-1.411-.606l-.457-.457c-.634-.628-.986-1.45-.986-2.331 0-1.38 1.12-2.5 2.5-2.5h.002l.06.002c.69.006 1.336.22 1.872.631.536.412.872.988 1.008 1.743l.013.107c.007.063.011.127.011.192 0 .065-.005.13-.014.194l-.022.15c-.068.447-.219.868-.45 1.248-.231.38-.541.709-.923.977l-.083.059c-.378.252-.815.39-1.261.39H9.5c-.524 0-1.03-.167-1.461-.504l-.083-.078c-.431-.404-.66-.965-.66-1.544V16.5c0-.579.23-1.128.63-1.514l.064-.063c.4-.385.949-.594 1.492-.594h1.164c.524 0 1.023.186 1.403.522l.065.063c.399.385.615.9.615 1.444v.062z"/></svg>
                 </a>
             </div>
         </div>
